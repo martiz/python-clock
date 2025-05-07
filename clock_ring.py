@@ -1,6 +1,7 @@
 import pygame
 import math
 from datetime import datetime
+from constants import *
 
 # Function to draw a circular ring representing time units (seconds, minutes, hours)
 def draw_ring(surface, center, radius, value, max_value, color, thickness):
@@ -68,9 +69,9 @@ def update_clock():
         font_size = max(20, base_radius // 5)  # Scale font size dynamically
         
         # Draw rings in correct order (seconds at bottom, then minutes, then hours on top)
-        draw_ring(screen, center, base_radius, seconds, 60, (0, 0, 255), thickness)  # Blue ring for seconds
-        draw_ring(screen, center, int(base_radius * 0.8), minutes, 60, (0, 255, 0), thickness + 2)  # Green for minutes
-        draw_ring(screen, center, int(base_radius * 0.6), hours, 24, (255, 0, 0), thickness + 4)  # Red for hours
+        draw_ring(screen, center, base_radius, seconds, 60, (LIGHT_BLUE), thickness)  # Light Blue ring for seconds
+        draw_ring(screen, center, int(base_radius * 0.8), minutes, 60, (TURQUOISE), thickness + 2)  # Turquoise for minutes
+        draw_ring(screen, center, int(base_radius * 0.6), hours, 24, (ORANGE), thickness + 4)  # Orange for hours
         
         # Draw digital clock in center with current time
         time_str = f"{hours:02}:{minutes:02}:{seconds:02}"  # Format time in HH:MM:SS
