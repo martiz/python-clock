@@ -11,7 +11,7 @@ def draw_ring(surface, center, radius, value, max_value, color, thickness):
     end_angle = start_angle + (360 * value / max_value)  # Calculate the end angle based on the time unit value
     
     # Draw background ring (gray ring for reference)
-    pygame.draw.circle(surface, GRAY, center, radius, thickness)
+    pygame.draw.circle(surface, GRAY_RING, center, radius, thickness)
     
     # Draw the progress arc representing the current value
     for angle in range(start_angle, int(end_angle)):
