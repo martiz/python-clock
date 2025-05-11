@@ -32,8 +32,8 @@ def draw_digital_clock(surface, center, time_str, color, font_size):
 def update_clock():
     """Update the clock display in a loop using pygame."""
     pygame.init()  # Initialize pygame
-    width, height = 800, 800  # Set the initial window size
-    screen = pygame.display.set_mode((width, height), pygame.RESIZABLE)  # Create a resizable window
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.RESIZABLE)  # Create a resizable window
+    pygame.display.set_caption(TITLE)
     clock = pygame.time.Clock()  # Initialize a clock object to control frame rate
     fullscreen = False  # Track fullscreen mode
     
@@ -55,7 +55,7 @@ def update_clock():
                         display_mode = pygame.display.list_modes(display_index)[0]  # Get best resolution for monitor
                         screen = pygame.display.set_mode(display_mode, pygame.FULLSCREEN, display=display_index)
                     else:
-                        screen = pygame.display.set_mode((800, 800), pygame.RESIZABLE)  # Restore windowed mode
+                        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.RESIZABLE)  # Restore windowed mode
         
         screen.fill((0, 0, 0))  # Clear the screen with black background
         now = datetime.now()  # Get the current time
